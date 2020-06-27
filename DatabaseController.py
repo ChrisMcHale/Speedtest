@@ -54,7 +54,7 @@ class DatabaseController:
         #Create and populate a tuple containing the results, from the passed results dictionary, that we want to enter into the database
         #In addition, prepend the tuple with the current date and time
         qtuple = (
-        str(datetime.now()), results.get("bytes_sent"), results.get("bytes_rec"), results.get("download_rate"),
+        str(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), results.get("bytes_sent"), results.get("bytes_rec"), results.get("download_rate"),
         results.get("upload_rate"), results.get("ping"), results.get("server"), results.get("url"))
         try:
             #Connect to the Database
